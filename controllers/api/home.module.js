@@ -153,6 +153,26 @@ module.exports = (req) => {
 			`;
 			return await req.module.asyncQuery(sql, [req.language_id]);
 		}
+		_this.getNew= async () => {
+
+			const url = req.config.base_url;
+
+			const sql = `SELECT t1.name, t1.description, t1.date, t1.link, t1.description, t1.views,
+
+				(CASE WHEN t1.images != '' THEN CONCAT('${url}', t1.images) ELSE '' END) as images,
+
+				t2.name as parent_name, t2.link as page_link
+
+				FROM ${table.content} t1
+
+				LEFT JOIN ${table.page} t2 ON t1.page_id = t2.id
+		
+				WHERE t1.status = 1 AND t1.language_id = $1
+				
+				ORDER BY t1.date ;
+			`;
+			return await req.module.asyncQuery(sql, [req.language_id]);
+		}
 
 		
 		_this.checkProcessEmail = async (email, id) => {

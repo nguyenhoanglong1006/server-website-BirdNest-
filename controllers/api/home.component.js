@@ -95,6 +95,21 @@ module.exports = (req, io) => {
 
         _this.getnews = async () => {
 
+            let result = await _module.getNew();
+
+            let skip = result.length > 0 ? true : false;
+
+            if (skip) {
+
+                req.success(null, result);
+
+            } else {
+
+                req.failure(_lang.notFoundData);
+            }
+        }
+        _this.getnewspin = async () => {
+
             let result = await _module.getNewsDidPin();
 
             let skip = result.length > 0 ? true : false;
