@@ -14,7 +14,7 @@ const uploadFroala = require('./library/froala/upload');
 
 var cors = require('cors');
 
-const ChipsWebService = function () {
+const BirdsWebService = function () {
 
 	const _this = this;
 
@@ -58,4 +58,4 @@ const ChipsWebService = function () {
 
 }
 
-const cws = new ChipsWebService();
+const cws = new BirdsWebService();

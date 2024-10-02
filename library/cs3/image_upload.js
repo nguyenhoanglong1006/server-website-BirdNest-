@@ -9,7 +9,7 @@ const {
   SPACES_URL = 'sgp1.digitaloceanspaces.com',
   SPACES_KEY = 'WZ5AZIKKJYFUMCZR5KGD',
   SPACES_SECRET = 'ZWvPdXL2vkBKvF2XlNUVfJKYDueNQHB8R7lsRNBCEpQ',
-  BUCKET_NAME = 'chip',
+  BUCKET_NAME = 'bird',
   BUCKER_FOLDER = 'https://vcsc-website.sgp1.digitaloceanspaces.com/cms'
 } = process.env;
 
